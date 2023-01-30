@@ -1,13 +1,155 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Roboto', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input {
+  border: none;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: rgb(194, 194, 194);
+  opacity: 1;
+}
+
+
+body {
+  min-height: 100vh;
+}
+
+.page-wrapper {
+  display: flex;
+
+  min-height: 100vh;
+
+  background-size: cover;
+  background-position: left;
+
+  height: 100vh;
+  width: 100%;
+
+}
+
+
+.side-wrapper {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100vh;
+  width: 30em;
+
+  padding: 4em 0em;
+
+  
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.side-wrapper header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 2em;
+  
+  width: 100%;
+}
+
+.side-wrapper header .location-input {
+  
+  width: 70%;
+  padding: .4em;
+  
+  font-size: 1.1em;
+  
+  background: none;
+  border-bottom: 2px solid rgb(194, 194, 194);
+}
+
+.side-wrapper .search-btn {
+  position: absolute;
+  right: 0em;
+
+  padding: 1.4rem;
+  font-size: 1.0em;
+
+  border: none;
+  background-color: rgb(255, 145, 0);
+  color: rgb(224, 224, 224);
+
+  cursor: pointer;
+
+  transition: all .15s;
+}
+
+.side-wrapper .search-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.side-wrapper .search-btn:active {
+  transform: scale(0.5);
+}
+
+
+
+
+
+
+.side-wrapper .sample-locations-list {
+  width: 100%;
+
+  margin-top: 2em;
+  padding-left: 2rem;
+
+  font-size: 1.1em;
+
+  color: rgb(224, 224, 224);
+
+  list-style-type: none;
+}
+
+.side-wrapper .sample-locations-list .sample-location{
+  position: relative;
+
+  margin-top: 2em;
+  cursor: pointer;
+}
+
+.side-wrapper .sample-locations-list .sample-location:last-of-type::after{
+  content: '';
+  position: absolute;
+
+  bottom: -4em;
+  left: 0;
+  width: calc(100% - 2em);
+
+  height: 2px;
+
+
+
+  background-color: rgb(194, 194, 194);
+}
+
+
+
+footer {
+  position: absolute;
+  
+  bottom: 1em;
+  left: 1em;
+  color: rgb(194, 194, 194);
 }

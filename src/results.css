@@ -1,0 +1,61 @@
+.results {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    align-self: flex-end;
+    flex: 1;
+
+    margin-bottom: 3em;
+
+    text-align: center;
+
+    font-size: 4em;
+
+    gap: 1.5rem;
+
+    font-weight: normal;
+
+    color: rgb(224, 224, 224);
+
+    animation: fade-in 1s;
+}
+
+.results .degrees {
+
+    font-size: 1.9em;
+}
+
+    .results .location-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.results .location {
+
+}
+
+.results .time {
+    font-size: 0.4em;
+}
+
+
+.results .weather-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.results .weather {
+    font-size: 0.4em;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
