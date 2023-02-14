@@ -18,7 +18,6 @@
 
     color: rgb(224, 224, 224);
 
-    animation: fade-in 1s;
 }
 
 .results .degrees {
@@ -26,13 +25,9 @@
     font-size: 1.9em;
 }
 
-    .results .location-container {
+.results .location-container {
     display: flex;
     flex-direction: column;
-
-}
-
-.results .location {
 
 }
 
@@ -51,11 +46,31 @@
     font-size: 0.4em;
 }
 
+.results[fadein='1'] {
+    animation: fade-in 1.5s;
+}
+
 @keyframes fade-in {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
+    }
+}
+
+@media (max-width: 1350px) {  
+    body {
+      font-size: 12px;
+    }
+
+    .results {
+        margin-bottom: 1.3em;
+    }
+}
+
+@media (orientation: portrait) and (max-width: 640px) {  
+    .results {
+        align-self: center;
     }
 }

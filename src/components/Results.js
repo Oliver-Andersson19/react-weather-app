@@ -3,7 +3,7 @@ import '../results.css';
 
 function Results(props) {
   return (
-    <div className="results">
+    <div className="results" fadein={props.fadeIn} onAnimationEnd={() => props.setFade(0)}>
 
         <span className="degrees">{props.weatherData.degrees}°</span>
 

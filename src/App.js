@@ -4,9 +4,11 @@ import { fetchWeatherData } from "./components/weatherFetch";
 
 function App() {
 
-  const [backgroundImage, setBackgroundImage] = useState("imgs/sunny-bg.jpg");
+  const [backgroundImage, setBackgroundImage] = useState("imgs/cloudy-bg.jpg");
   const [locationValue, setLocationValue] = useState();
   const [weatherData, setWeatherData] = useState(null);
+
+  const [fade, setFade] = useState(false);
 
   const handleChange = (event) => {
     setLocationValue(event.target.value)
@@ -24,12 +26,27 @@ function App() {
     data.time = time;
 
     setWeatherData(data)
+    // Fade in
+    setFade(1)
+    setCorrectBackground(data.weather)
   }
 
-  
+  function setCorrectBackground(data) {
+    console.log(data);
+    if (data === "Snow") {
+      setBackgroundImage("imgs/snow-bg.jpg")
+    } else if (data === "Clouds") {
+      setBackgroundImage("imgs/cloudy-bg.jpg")
+    } else if (data === "Fog") {
+      setBackgroundImage("imgs/fog-bg.jpg")
+    } else {
+      setBackgroundImage("imgs/sunny-bg.jpg")
+    }
+  }
+
 
   return (
-    <div className="page-wrapper" style={{backgroundImage: 'url(' + backgroundImage + ')'}}>
+    <div className="page-wrapper" style={{backgroundImage: 'url(' + backgroundImage + ')'}} fadeIn={fade}>
 
       <div className="side-wrapper">
 
@@ -52,7 +69,7 @@ function App() {
 
       </div>
 
-      { weatherData && <Results weatherData={weatherData}></Results>}
+      { weatherData && <Results weatherData={weatherData} fadeIn={fade} setFade={setFade}></Results>}
 
     </div>
   );
