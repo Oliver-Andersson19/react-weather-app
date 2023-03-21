@@ -1,7 +1,7 @@
 const apiKey = "98c9d96c371db16039d3ee409fc1b3d1";
 
 function getLocation(city, callback) {
-    return fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`).then((respone) => respone.json());
+    return fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`).then((respone) => respone.json());
 }
 
 function getWeather(location, callback) {
